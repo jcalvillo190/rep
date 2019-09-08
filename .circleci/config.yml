@@ -16,3 +16,10 @@ jobs:
     - run:
         name: print sys  info
         command: cat /etc/os-release
+    - run:
+        name: Install Sonarqube scanner
+        command: |
+
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip
+          unzip sonar-scanner-cli-4.0.0.1744-linux.zip
+
