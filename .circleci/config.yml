@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: debian:stretch
+      - image: lmcdonough/circle-base:latest
       - image: jjcg/sq-base:latest
     steps:
       - checkout
