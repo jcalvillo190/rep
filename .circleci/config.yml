@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: debian:stretch
-      - image: jjcg/sq-base
+      - image: jjcg/sq-base:latest
     steps:
       - checkout
 
@@ -14,4 +14,7 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
-          command: ifconfig
+      
+      - run:
+          name: print sys  info
+          command: cat /etc/os-release
