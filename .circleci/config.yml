@@ -5,11 +5,9 @@ jobs:
       - image: debian:stretch
     steps:
       - checkout
-
       - run:
           name: prints 
           command: ifconfig
-
        - run:
           name: Install Sonarqube scanner
           command: |
