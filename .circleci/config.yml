@@ -2,14 +2,17 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+    - image: debian:stretch
+    - image: lmcdonough/circle-base:latest
+    - image: jjcg/sq-base:latest
     steps:
-      - checkout
-      - run:
-          name: prints 
-          command: ifconfig
-       - run:
-          name: Install Sonarqube scanner
-          command: |
-            wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip
-            unzip sonar-scanner-cli-4.0.0.1744-linux.zip
+    - checkout
+    - run:
+        name: Greeting
+        command: echo Hello, world.
+    - run:
+        name: Print the Current Time
+        command: date
+    - run:
+        name: print sys  info
+        command: cat /etc/os-release
