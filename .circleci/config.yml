@@ -22,4 +22,14 @@ jobs:
         command: |
           wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip
           unzip sonar-scanner-cli-4.0.0.1744-linux.zip
+    - run:
+        name: Run Sonarqube scanner
+        command: |
+          eval ./sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -Dsonar.projectKey=rep \
+          -Dsonar.projectName=rep \
+          -Dsonar.projectVersion=1.0 \
+          -Dsonar.sources=. \
+          -Dsonar.language=py \
+          -Dsonar.login=admin \
+          -Dsonar.password=admin
 
