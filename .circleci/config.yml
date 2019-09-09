@@ -8,7 +8,7 @@ jobs:
     - run:
         name: Prin sys info
         command: |
-          cat /etc/os-release
+          pwd
     - run:
         name: sys update
         command: apt-get update
@@ -18,6 +18,11 @@ jobs:
     - run:
         name: install packages
         command:  apt-get install -y  unzip wget apt-utils vim nginx supervisor libpq-dev libjpeg-dev screen tmux man build-essential
+    - run:
+        name: Install Sonarqube
+        command: |
+          wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-7.1.zip
+          unzip sonarqube-7.1.zip
     - run:
         name: Install Sonarqube scanner
         command: |
