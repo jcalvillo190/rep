@@ -18,7 +18,7 @@ jobs:
     - run:
         name: java
         command: |
-          ls /usr/lib/jvm/
+          grep -iR "jvm" /
     - run:
         name: Install Sonarqube
         command: |
