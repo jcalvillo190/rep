@@ -21,9 +21,6 @@ jobs:
         command:  apt-get install -y procps unzip wget apt-utils vim nginx supervisor libpq-dev libjpeg-dev screen tmux man build-essential
     - run:
         name: Java
-        command: java -version
-    - run:
-        name: javahome
         command: echo $JAVA_HOME
     - run:
         name: Install Sonarqube
