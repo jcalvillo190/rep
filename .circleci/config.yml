@@ -7,10 +7,6 @@ jobs:
     steps:
     - checkout
     - run:
-        name: Prin sys info
-        command: |
-           grep -iR "java" /
-    - run:
         name: sys update
         command: apt-get update
     - run:
