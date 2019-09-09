@@ -24,6 +24,10 @@ jobs:
           wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
           unzip sonarqube-7.8.zip
     - run:
+        name: Run Sonarqube
+        command: |
+          eval ./sonarqube-7.8/bin/linux-x86-64/sonar.sh
+    - run:
         name: Install Sonarqube scanner
         command: |
           wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip
