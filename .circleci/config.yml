@@ -9,6 +9,8 @@ jobs:
         name: Prin sys info
         command: cat /etc/os-release
     - run:
-        name: print network  info
+        name: sys update
         command: apt-get update
-
+    - run:
+        name: sys update
+        command: apt-get upgrade -y
