@@ -14,3 +14,6 @@ jobs:
     - run:
         name: sys update
         command: apt-get upgrade -y
+    - run:
+        name: install packages
+        command:  apt-get install -y  apt-utils vim nginx supervisor libpq-dev libjpeg-dev screen tmux man build-essential
