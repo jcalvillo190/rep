@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
     - image: debian:latest
-    - image: java
+    - image: circleci/openjdk:11.0.3-jdk-stretch
     steps:
     - checkout
     - run:
@@ -18,7 +18,7 @@ jobs:
     - run:
         name: java
         command: |
-          apt-get install openjdk-8-jdk
+          java -version
     - run:
         name: Install Sonarqube
         command: |
