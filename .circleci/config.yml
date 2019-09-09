@@ -23,6 +23,9 @@ jobs:
         name: Java
         command: java -version
     - run:
+        name: javahome
+        command: echo $JAVA_HOME
+    - run:
         name: Install Sonarqube
         command: |
           wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
