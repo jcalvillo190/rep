@@ -9,8 +9,6 @@ jobs:
         name: Prin sys info
         command: |
           cat /etc/os-release
-          ifconfig
-          pwd
     - run:
         name: sys update
         command: apt-get update
