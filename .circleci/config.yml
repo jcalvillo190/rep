@@ -3,7 +3,6 @@ jobs:
   build:
     working_directory: ~/test-sq
     docker:
-    - image: debian:latest
     - image: circleci/openjdk:11.0.3-jdk-stretch
     steps:
     - checkout
@@ -19,7 +18,7 @@ jobs:
     - run:
         name: java
         command: |
-          java -version
+          echo $JAVA_HOME
     - run:
         name: Install Sonarqube
         command: |
