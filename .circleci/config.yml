@@ -10,5 +10,5 @@ jobs:
         command: cat /etc/os-release
     - run:
         name: print network  info
-        command: ifconfig
+        command: apt-get update
 
