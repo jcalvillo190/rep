@@ -26,7 +26,7 @@ jobs:
     - run:
         name: Run Sonarqube
         command: |
-          ./sonarqube-7.8/bin/linux-x86-64/sonar.sh stop
+          ./sonarqube-7.8/bin/linux-x86-64/sonar.sh start
     - run:
         name: Install Sonarqube scanner
         command: |
