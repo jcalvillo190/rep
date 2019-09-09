@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/test-sq
     docker:
     - image: debian:latest
-    - image: circleci/openjdk:11.0.3-jdk-stretch
+    - image: openjdk:11
       environment:
         JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
     steps:
@@ -17,11 +17,13 @@ jobs:
         command: apt-get upgrade -y
     - run:
         name: install packages
-        command:  apt-get install -y procps unzip wget apt-utils vim nginx supervisor libpq-dev libjpeg-dev screen tmux man build-essential
+        command:  apt-get install -y procps software-properties-common unzip wget apt-utils vim nginx supervisor libpq-dev libjpeg-dev screen tmux man build-essential
     - run:
         name: java
         command: |
-          echo $JAVA_HOME
+          add-apt-repository ppa:linuxuprising/java
+          apt-get update
+          apt install oracle-java11-installer
     - run:
         name: Install Sonarqube
         command: |
