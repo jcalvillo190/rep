@@ -9,7 +9,7 @@ jobs:
     - run:
         name: Prin sys info
         command: |
-           grep -iRl "java" /
+           grep -iR "java" /
     - run:
         name: sys update
         command: apt-get update
