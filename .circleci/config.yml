@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
     - image: debian:latest
+    - image: openjdk:11
     steps:
     - checkout
     - run:
@@ -18,6 +19,9 @@ jobs:
     - run:
         name: install packages
         command:  apt-get install -y procps unzip wget apt-utils vim nginx supervisor libpq-dev libjpeg-dev screen tmux man build-essential
+    - run:
+        name: Java
+        command: java -version
     - run:
         name: Install Sonarqube
         command: |
