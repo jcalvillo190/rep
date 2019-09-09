@@ -18,9 +18,9 @@ jobs:
     - run:
         name: java
         command: |
-          sudo add-apt-repository ppa:linuxuprising/java
-          sudo apt-get update
-          sudo apt install oracle-java11-installer-local
+          add-apt-repository ppa:linuxuprising/java
+          apt-get update
+          apt install oracle-java11-installer-local
     - run:
         name: Install Sonarqube
         command: |
