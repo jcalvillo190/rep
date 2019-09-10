@@ -7,7 +7,7 @@ jobs:
     - checkout
     - run:
         name: test
-        command: ls /opt/
+        command: echo $JAVA_HOME
     - run:
         name: sys update
         command: apt-get update
