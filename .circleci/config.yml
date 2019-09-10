@@ -8,8 +8,9 @@ jobs:
     - run:
         name: test
         command: |
-          echo $PATH
+          PATH=$PATH:/opt/jdk-minimal/bin
           echo $JAVA_HOME
+          java -version
     - run:
         name: sys update
         command: apt-get update
