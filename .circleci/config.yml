@@ -16,5 +16,14 @@ jobs:
         command: apt-get upgrade -y
     - run:
         name: install packages
-        command:  apt-get install -y procps software-properties-common unzip wget apt-utils vim nginx supervisor libpq-dev libjpeg-dev screen tmux man build-essential
+        command:  apt-get install -y unzip wget procps software-properties-common unzip wget apt-utils vim nginx supervisor libpq-dev libjpeg-dev screen tmux man build-essential
+    - run:
+        name: Install Sonarqube
+        command: |
+          wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
+          unzip sonarqube-7.8.zip
+    - run:
+        name: Run Sonarqube
+        command: |
+          ./sonarqube-7.8/bin/linux-x86-64/sonar.sh console
 
