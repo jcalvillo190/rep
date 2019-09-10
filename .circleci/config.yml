@@ -28,5 +28,5 @@ jobs:
         name: Run Sonarqube
         command: |
           pwd
-          ./sonarqube-7.8/bin/linux-x86-64/sonar.sh start
+          ./sonarqube-7.8/bin/linux-x86-64/sonar.sh status
 
