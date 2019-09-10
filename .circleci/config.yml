@@ -28,5 +28,5 @@ jobs:
         name: Run Sonarqube
         command: |
           pwd
-          eval ./sonarqube-7.8/bin/linux-x86-64/sonar.sh -Dwrapper.java.command=/opt/jdk-minimal/bin/
+          eval ./sonarqube-7.8/bin/linux-x86-64/sonar.sh console
 
