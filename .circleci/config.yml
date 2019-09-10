@@ -1,14 +1,13 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/test-sq
     docker:
-    - image: debian:latest
-    - image: openjdk:11
-      environment:
-        JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+    - image: jjcg/sq-base:00
     steps:
     - checkout
+    - run:
+        name: test
+        command: ls /opt/
     - run:
         name: sys update
         command: apt-get update
@@ -18,34 +17,4 @@ jobs:
     - run:
         name: install packages
         command:  apt-get install -y procps software-properties-common unzip wget apt-utils vim nginx supervisor libpq-dev libjpeg-dev screen tmux man build-essential
-    - run:
-        name: java
-        command: |
-          add-apt-repository ppa:linuxuprising/java
-          apt-get update
-          apt install oracle-java11-installer
-    - run:
-        name: Install Sonarqube
-        command: |
-          wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
-          unzip sonarqube-7.8.zip
-    - run:
-        name: Run Sonarqube
-        command: |
-          ./sonarqube-7.8/bin/linux-x86-64/sonar.sh console
-    - run:
-        name: Install Sonarqube scanner
-        command: |
-          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip
-          unzip sonar-scanner-cli-4.0.0.1744-linux.zip
-    - run:
-        name: Run Sonarqube scanner
-        command: |
-          eval ./sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -Dsonar.projectKey=rep \
-          -Dsonar.projectName=rep \
-          -Dsonar.projectVersion=1.0 \
-          -Dsonar.sources=. \
-          -Dsonar.language=py \
-          -Dsonar.login=admin \
-          -Dsonar.password=admin
 
