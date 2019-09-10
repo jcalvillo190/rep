@@ -27,5 +27,6 @@ jobs:
     - run:
         name: Run Sonarqube
         command: |
-         sudo /sonarqube-7.8/bin/linux-x86-64/sonar.sh start
+          pwd
+          ./sonarqube-7.8/bin/linux-x86-64/sonar.sh start
 
