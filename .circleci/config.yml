@@ -8,7 +8,7 @@ jobs:
     - run:
         name: test
         command: |
-          PATH=$PATH:/opt/jdk-minimal/bin/java
+          PATH=$PATH:/opt/jdk-minimal/bin/
           java -version
     - run:
         name: sys update
