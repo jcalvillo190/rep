@@ -8,7 +8,7 @@ jobs:
     - run:
         name: test
         command: |
-          PATH=$PATH:/opt/jdk-minimal/bin
+          PATH=$PATH:/opt/jdk-minimal/bin/java
           java -version
     - run:
         name: sys update
@@ -28,5 +28,6 @@ jobs:
         name: Run Sonarqube
         command: |
           pwd
-          ./sonarqube-7.8/bin/linux-x86-64/sonar.sh console
+          cat ./sonarqube-7.8/conf/wrapper.conf
+          ./sonarqube-7.8/bin/linux-x86-64/sonar.sh -help
 
