@@ -28,5 +28,6 @@ jobs:
         name: Run Sonarqube
         command: |
           pwd
+          vi ./sonarqube-7.8/conf/wrapper.conf
           eval ./sonarqube-7.8/bin/linux-x86-64/sonar.sh console
 
