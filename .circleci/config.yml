@@ -29,9 +29,8 @@ jobs:
           ls -l /opt/
           mkdir -p /opt/sonarqube-7.8
           unzip ./sonarqube-7.8.zip
-          ccp -a /root/project/temp/sonarqube-7.8/.  /opt/
+          cp -a ./sonarqube-7.8/.  /opt/
           ls /opt
-          cp -a ./sonarqube-7.8/. /root/opt/
     - run:
         name: Run Sonarqube
         command: |
