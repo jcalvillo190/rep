@@ -29,6 +29,7 @@ jobs:
           pwd
           ls -l /root/project/
           ls -l /root/
+          ls -l /
           unzip /root/project/temp/sonarqube-7.8.zip
           mkdir -p /root/opt/sonarqube-7.8 
           cd /root/project/temp/
