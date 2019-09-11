@@ -29,16 +29,16 @@ jobs:
         command: |
           pwd
           eval ./sonarqube-7.8/bin/linux-x86-64/sonar.sh console
-      - run:
-          name: Install Sonarqube scanner
-          command: |
-            wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip
+    - run:
+        name: Install Sonarqube scanner
+        command: |
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip
             unzip sonar-scanner-cli-4.0.0.1744-linux.zip
-      - run:
-          name: Run Sonarqube scanner
-          command: |
-            eval ./sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -Dsonar.projectKey=${CIRCLE_PROJECT_REPONAME} \
-            -Dsonar.projectVersion=${CIRCLE_BRANCH} \
-            -Dsonar.host.url=http://54.160.99.9:9000 \
-            -Dsonar.login=81948a1dfc757648fa3b92b8a513ec0a6e03e947
+    - run:
+        name: Run Sonarqube scanner
+        command: |
+          eval ./sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -Dsonar.projectKey=${CIRCLE_PROJECT_REPONAME} \
+          -Dsonar.projectVersion=${CIRCLE_BRANCH} \
+          -Dsonar.host.url=http://54.160.99.9:9000 \
+          -Dsonar.login=81948a1dfc757648fa3b92b8a513ec0a6e03e947
 
