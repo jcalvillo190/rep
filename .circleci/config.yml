@@ -9,6 +9,8 @@ jobs:
         name: test
         command: |
           PATH=$PATH:/opt/jdk-minimal/bin/
+          sudo mkdir /opt/java
+          cp /opt/jdk-minimal/  /opt/java/
           java -version
     - run:
         name: sys update
@@ -24,13 +26,13 @@ jobs:
         command: |
           wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
           unzip sonarqube-7.8.zip
-          #cp sonarqube-7.8 /opt/
+          cp ./sonarqube-7.8 /opt/
     - run:
         name: Run Sonarqube
         command: |
           pwd
           ls /opt/
-          sed 's/wrapper.java.command/opt/jdk-minimal/bin/' ./sonarqube-7.8/conf/wrapper.conf
+          #sed 's/wrapper.java.command/opt/jdk-minimal/bin/' ./sonarqube-7.8/conf/wrapper.conf
           eval ./sonarqube-7.8/bin/linux-x86-64/sonar.sh console
     - run:
         name: shell
