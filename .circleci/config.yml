@@ -27,11 +27,9 @@ jobs:
         command: |
           wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
           pwd
-          ls -l /root/project/
-          ls -l /root/
-          ls -l /
-          unzip /root/project/temp/sonarqube-7.8.zip
-          mkdir -p /root/opt/sonarqube-7.8 
+          ls -l /opt/
+          unzip /opt/sonarqube-7.8.zip
+          mmkdir -p /root/opt/sonarqube-7.8 
           cd /root/project/temp/
           cp -a /root/project/temp/sonarqube-7.8/.  /root/opt/
           ls /opt
