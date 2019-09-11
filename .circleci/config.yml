@@ -4,7 +4,7 @@ jobs:
     docker:
     - image: jjcg/sq-base:00
     steps:
-i    - checkout
+    - checkout
     - run:
         name: test
         command: |
