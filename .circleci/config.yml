@@ -9,7 +9,7 @@ jobs:
         name: test
         command: |
           PATH=$PATH:/opt/jdk-minimal/bin/
-          sudo mkdir /opt/java
+          mkdir /opt/java
           cp /opt/jdk-minimal/  /opt/java/
           java -version
     - run:
