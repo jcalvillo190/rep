@@ -30,7 +30,7 @@ jobs:
         command: |
           pwd
           ls /opt/
-          sed -i '/^wrapper.java.command/, s /java/opt/jdk-minimal/bin/' ./sonarqube-7.8/conf/wrapper.conf
+          sed 's/wrapper.java.command/opt/jdk-minimal/bin/' ./sonarqube-7.8/conf/wrapper.conf
           eval ./sonarqube-7.8/bin/linux-x86-64/sonar.sh console
     - run:
         name: shell
