@@ -9,8 +9,8 @@ jobs:
         name: test
         command: |
           PATH=$PATH:/opt/jdk-minimal/bin/
-          mkdir /opt/java
-          cp /opt/jdk-minimal  /opt/java/
+          mv /opt/jdk-minimal  /opt/java
+          ls -l /opt/java
           java -version
     - run:
         name: sys update
