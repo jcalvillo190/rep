@@ -10,7 +10,7 @@ jobs:
         command: |
           PATH=$PATH:/opt/jdk-minimal/bin/
           mkdir /opt/java
-          cp /opt/jdk-minimal/  /opt/java/
+          cp /opt/jdk-minimal  /opt/java/
           java -version
     - run:
         name: sys update
