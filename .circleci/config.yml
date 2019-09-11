@@ -27,7 +27,7 @@ jobs:
         command: |
           wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
           pwd
-          ls -l /root/project/temp/
+          ls -l /root/project/
           unzip /root/project/temp/sonarqube-7.8.zip
           mkdir -p /root/opt/sonarqube-7.8 
           cd /root/project/temp/
