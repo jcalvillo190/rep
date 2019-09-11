@@ -26,8 +26,9 @@ jobs:
         name: Install Sonarqube
         command: |
           wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
-          unzip /opt/sonarqube-7.8.zip
-          ls ls /opt
+          pwd
+          unzip sonarqube-7.8.zip
+          # ls /opt
           #cp -a ./sonarqube-7.8/. /opt/
     - run:
         name: Run Sonarqube
