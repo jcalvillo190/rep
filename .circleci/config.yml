@@ -28,7 +28,7 @@ jobs:
         name: Run Sonarqube
         command: |
           pwd
-          ls ./sonarqube-7.8/conf/
+          ls -l ./sonarqube-7.8/conf/
           eval ./sonarqube-7.8/bin/linux-x86-64/sonar.sh console
 #    - run:
 #        name: Install Sonarqube scanner
