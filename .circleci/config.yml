@@ -49,7 +49,7 @@ jobs:
           whoami
           cat /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh
           cat /opt/sonarqube-7.8/conf/wrapper.conf
-          sh /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh console
+          ./opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh start
     - run:
         name: shell
         command: |
