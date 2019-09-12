@@ -38,6 +38,7 @@ jobs:
           ls /opt/sonarqube-7.8/bin/linux-x86-64/
           ls /opt/sonarqube-7.8/conf/
           adduser --disabled-password --disabled-login --gecos GECOS  sonarqube
+          chown -R sonarqube:sonarqube /opt/sonarqube-7.8/
           cut  -f1 /etc/passwd
           sh /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh console
     - run:
