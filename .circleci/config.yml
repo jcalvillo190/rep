@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
     - image: jjcg/sq-base:01
-      user: sonarqube
+      #user: sonarqube
     steps:
     - checkout
     - run:
@@ -11,7 +11,7 @@ jobs:
         command: |
           whoami
           PATH=$PATH:/opt/jdk-minimal/bin/
-          sudo mv /opt/jdk-minimal  /opt/java
+          mv /opt/jdk-minimal  /opt/java
           ls -l /opt/java
           PATH=$PATH:/opt/java/bin/
           java -version
@@ -40,10 +40,10 @@ jobs:
           ls -l /opt/sonarqube-7.8/
           ls -l /opt/sonarqube-7.8/bin/linux-x86-64/
           ls -l /opt/sonarqube-7.8/conf/
-          adduser --disabled-password --disabled-login --gecos GECOS  sonarqube
+          #adduser --disabled-password --disabled-login --gecos GECOS  sonarqube
           chown -R sonarqube:sonarqube /opt/sonarqube-7.8/
           ls -l /opt/sonarqube-7.8/
-          #su  sonarqube
+          su sonarqube
           whoami
           sh /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh console
     - run:
