@@ -41,7 +41,7 @@ jobs:
           adduser --disabled-password --disabled-login --gecos GECOS  sonarqube
           chown -R sonarqube:sonarqube /opt/sonarqube-7.8/
           ls -l /opt/sonarqube-7.8/
-          su sonarqube
+          su --command whoami --login --preserve-environment  sonarqube
           whoami
           sh /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh console
     - run:
