@@ -11,7 +11,7 @@ jobs:
         command: |
           whoami
           PATH=$PATH:/opt/jdk-minimal/bin/
-          mv /opt/jdk-minimal  /opt/java
+          sudo mv /opt/jdk-minimal  /opt/java
           ls -l /opt/java
           PATH=$PATH:/opt/java/bin/
           java -version
