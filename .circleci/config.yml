@@ -51,6 +51,7 @@ jobs:
           ls -l /opt/sonarqube-7.8/
           #su sonarqube
           whoami
+          cat /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh
           sh /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh console
     - run:
         name: shell
