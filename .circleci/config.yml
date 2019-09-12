@@ -32,9 +32,13 @@ jobs:
           mkdir -p /opt/sonarqube-7.8
           unzip ./sonarqube-7.8.zip
           cp -a ./sonarqube-7.8/.  /opt/sonarqube-7.8/
+          cat /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh
+          cat /opt/sonarqube-7.8/conf/wrapper.conf
           ls /opt
           cp -rf ./sonarFiles/bin/linux-x86-64/sonar.sh /opt/sonarqube-7.8/bin/linux-x86-64/
-          cp -rf ./sonarFiles/conf/wrapper.conf /opt/sonarqube-7.8/conf/ 
+          cp -rf ./sonarFiles/conf/wrapper.conf /opt/sonarqube-7.8/conf/
+          cat /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh
+          cat /opt/sonarqube-7.8/conf/wrapper.conf 
     - run:
         name: Run Sonarqube
         command: |
