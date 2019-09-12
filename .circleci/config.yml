@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
     - image: jjcg/sq-base:00
-      user: sonarqube
+      #user: sonarqube
     steps:
     - checkout
     - run:
