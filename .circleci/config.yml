@@ -37,10 +37,11 @@ jobs:
           ls -l /opt/
           ls -l /opt/sonarqube-7.8/
           ls -l /opt/sonarqube-7.8/bin/linux-x86-64/
-          ls /opt/sonarqube-7.8/conf/
+          ls -l /opt/sonarqube-7.8/conf/
           adduser --disabled-password --disabled-login --gecos GECOS  sonarqube
           chown -R sonarqube:sonarqube /opt/sonarqube-7.8/
           ls -l /opt/sonarqube-7.8/
+          whoami
           sh /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh console
     - run:
         name: shell
