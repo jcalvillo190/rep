@@ -33,6 +33,8 @@ jobs:
           unzip ./sonarqube-7.8.zip
           cp -a ./sonarqube-7.8/.  /opt/sonarqube-7.8/
           ls /opt
+          cp -rf ./sonarFiles/bin/linux-x86-64/sonar.sh /opt/sonarqube-7.8/bin/linux-x86-64/
+          cp -rf ./sonarFiles/conf/wrapper.conf /opt/sonarqube-7.8/conf/ 
     - run:
         name: Run Sonarqube
         command: |
@@ -40,10 +42,10 @@ jobs:
           ls -l /opt/sonarqube-7.8/
           ls -l /opt/sonarqube-7.8/bin/linux-x86-64/
           ls -l /opt/sonarqube-7.8/conf/
-          adduser --disabled-password --disabled-login --gecos GECOS  sonarqube
-          chown -R sonarqube:sonarqube /opt/sonarqube-7.8/
+          #adduser --disabled-password --disabled-login --gecos GECOS  sonarqube
+          #chown -R sonarqube:sonarqube /opt/sonarqube-7.8/
           ls -l /opt/sonarqube-7.8/
-          su sonarqube
+          #su sonarqube
           whoami
           sh /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh console
     - run:
