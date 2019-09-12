@@ -40,7 +40,7 @@ jobs:
           ls -l /opt/sonarqube-7.8/
           ls -l /opt/sonarqube-7.8/bin/linux-x86-64/
           ls -l /opt/sonarqube-7.8/conf/
-          #adduser --disabled-password --disabled-login --gecos GECOS  sonarqube
+          adduser --disabled-password --disabled-login --gecos GECOS  sonarqube
           chown -R sonarqube:sonarqube /opt/sonarqube-7.8/
           ls -l /opt/sonarqube-7.8/
           su sonarqube
