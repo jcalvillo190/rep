@@ -2,8 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-    - image: jjcg/sq-base:00
-      #user: sonarqube
+    - image: jjcg/sq-base:01
+      user: sonarqube
     steps:
     - checkout
     - run:
@@ -45,7 +45,7 @@ jobs:
           ls -l /opt/sonarqube-7.8/
           #su  sonarqube
           whoami
-          ./opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh console
+          sh /opt/sonarqube-7.8/bin/linux-x86-64/sonar.sh console
     - run:
         name: shell
         command: |
